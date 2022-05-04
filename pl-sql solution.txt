@@ -1,0 +1,34 @@
+1.) WAPLSQL Program to input 4 numbers and display largest.
+ 
+DECLARE 
+   a number; 
+   b number; 
+   c number;
+   d number;
+   e number;
+FUNCTION findMax(x IN number, y IN number,u IN number,v IN number)  
+RETURN number 
+IS 
+    z number; 
+BEGIN 
+   IF x > y AND x >u  AND x > v THEN 
+      z:= x; 
+   ELSIF y > x AND y >u  AND y > v THEN
+      Z:= y; 
+   ELSIF u > x AND u >y  AND u > v THEN
+      Z:= u;
+   ELSE  
+      Z:= v;
+   END IF;  
+   RETURN z; 
+END; 
+BEGIN 
+   a:= &a; 
+   b:= &b;
+   c:= &c; 
+   d:= &d; 
+   e := findMax(a, b, c, d); 
+   dbms_output.put_line(' Maximum is: ' || e); 
+END; 
+/
+
